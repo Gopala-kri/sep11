@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React, { useState } from 'react';
+
+function Toggle() {
+  const [isToggled, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!isToggled);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div>
+      <center>
+      <button onClick={handleToggle}>
+        {isToggled ? 'Turn Off' : 'Turn On'}
+      </button>
+      {isToggled && <p>The toggle is ON.</p>}
+      
+      </center>
     </div>
   );
 }
 
-export default App;
+export default Toggle;
